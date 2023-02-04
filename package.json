@@ -8,7 +8,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "author": "Shay DeWael",
+  "author": "Mateo Wallace",
   "license": "MIT",
   "dependencies": {
     "discord-interactions": "^3.2.0",

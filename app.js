@@ -28,19 +28,19 @@ app.post("/interactions", function (req, res) {
 
 async function createCommand() {
   const appId = process.env.APP_ID;
-  const guildId = process.env.GUILD_ID;
+  // const guildId = process.env.GUILD_ID;
 
   /**
    * Globally-scoped slash commands (generally only recommended for production)
    * See https://discord.com/developers/docs/interactions/application-commands#create-global-application-command
    */
-  // const globalEndpoint = `applications/${appId}/commands`;
+  const globalEndpoint = `applications/${appId}/commands`;
 
   /**
    * Guild-scoped slash commands
    * See https://discord.com/developers/docs/interactions/application-commands#create-guild-application-command
    */
-  const guildEndpoint = `applications/${appId}/guilds/${guildId}/commands`;
+  // const guildEndpoint = `applications/${appId}/guilds/${guildId}/commands`;
   const commandBody = {
     name: "dumbot",
     description: "Responds with a simple message",
@@ -50,7 +50,7 @@ async function createCommand() {
 
   try {
     // Send HTTP request with bot token
-    const res = await DiscordRequest(guildEndpoint, {
+    const res = await DiscordRequest(globalEndpoint, {
       method: "POST",
       body: commandBody,
     });
