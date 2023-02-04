@@ -1,100 +1,65 @@
-# Getting Started app for Discord
+# MP1-Discord-DumBot
 
-This project contains a basic rock-paper-scissors-style Discord app written in JavaScript, built for the [getting started guide](https://discord.com/developers/docs/getting-started).
+Discord DumBot is an extremely simple bot for discord. It works in multiple discord servers and is ready to be added to yours, and makes it so when a user types `/dumbot` the bot will respond with `Hello, I am DumBot. I am very dumb.`
 
-![Demo of app](/assets/getting-started-demo.gif?raw=true)
+While building this bot I learned how to:
 
-> ✨ A version of this code is also hosted **[on Glitch 🎏](https://glitch.com/~getting-started-discord)** and **[on Replit 🌀](https://replit.com/github/discord/discord-example-app)**
+- Add a bot to a discord server
+- Track the chat for a specific command
+- Have the bot respond with a message in chat
+- Host the bot on a site called `Glitch`
 
-## Project structure
-Below is a basic overview of the project structure:
+### Built With
 
-```
-├── examples    -> short, feature-specific sample apps
-│   ├── button.js
-│   ├── command.js
-│   ├── modal.js
-│   ├── selectMenu.js
-├── .env.sample -> sample .env file
-├── app.js      -> main entrypoint for app
-├── commands.js -> slash command payloads + helpers
-├── game.js     -> logic specific to RPS
-├── utils.js    -> utility functions and enums
-├── package.json
-├── README.md
-└── .gitignore
-```
+[![Express Shield](https://img.shields.io/badge/Express-000000?&style=for-the-badge&logo=express&logoColor=white)](http://expressjs.com/) [![Discord Interactions Shield](https://img.shields.io/badge/Discord_Interactions-5865F2?&style=for-the-badge&logo=discord&logoColor=white)](https://github.com/discord/discord-interactions-js) [![Glitch Shield](https://img.shields.io/badge/Glitch-3333FF?&style=for-the-badge&logo=glitch&logoColor=white)](https://glitch.com/) [![Ngrok Shield](https://img.shields.io/badge/Ngrok-1F1E37?&style=for-the-badge&logo=ngrok&logoColor=white)](https://ngrok.com/)
 
-## Running app locally
+## Table of Contents
 
-Before you start, you'll need to install [NodeJS](https://nodejs.org/en/download/) and [create a Discord app](https://discord.com/developers/applications) with the proper permissions:
-- `applications.commands`
-- `bot` (with Send Messages enabled)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
+## Installation
 
-Configuring the app is covered in detail in the [getting started guide](https://discord.com/developers/docs/getting-started).
+To install DumBot simply follow this link: [discord.com/dumbot](https://discord.com/api/oauth2/authorize?client_id=1071137999598927973&permissions=3072&scope=applications.commands%20bot)
 
-### Setup project
+1. Give DumBot permissions, it only needs read and write permissions. This should auto populate while installing
+1. Select the server you would like to add DumBot to
 
-First clone the project:
-```
-git clone https://github.com/discord/discord-example-app.git
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Then navigate to its directory and install dependencies:
-```
-cd discord-example-app
-npm install
-```
-### Get app credentials
+## Usage
 
-Fetch the credentials from your app's settings and add them to a `.env` file (see `.env.sample` for an example). You'll need your app ID (`APP_ID`), server ID (`GUILD_ID`), bot token (`DISCORD_TOKEN`), and public key (`PUBLIC_KEY`).
+From the message line type the command `/dumbot` and it will respond with `Hello, I am DumBot. I am very dumb.`. It's a very simple bot. 
 
-Fetching credentials is covered in detail in the [getting started guide](https://discord.com/developers/docs/getting-started).
+![/dumbot command in action](./assets/dumbot.gif)
 
-> 🔑 Environment variables can be added to the `.env` file in Glitch or when developing locally, and in the Secrets tab in Replit (the lock icon on the left).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Run the app
+## Contributing
 
-After your credentials are added, go ahead and run the app:
+If you have a suggestion that would make the repo better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
 
-```
-node app.js
-```
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
 
-> ⚙️ A package [like `nodemon`](https://github.com/remy/nodemon), which watches for local changes and restarts your app, may be helpful while locally developing.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Set up interactivity
+## License
 
-The project needs a public endpoint where Discord can send requests. To develop and test locally, you can use something like [`ngrok`](https://ngrok.com/) to tunnel HTTP traffic.
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
 
-Install ngrok if you haven't already, then start listening on port `3000`:
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-```
-ngrok http 3000
-```
+## Contact
 
-You should see your connection open:
+For any further questions feel free to contact Mateo Wallace via:
 
-```
-Tunnel Status                 online
-Version                       2.0/2.0
-Web Interface                 http://127.0.0.1:4040
-Forwarding                    http://1234-someurl.ngrok.io -> localhost:3000
-Forwarding                    https://1234-someurl.ngrok.io -> localhost:3000
+[GitHub](https://github.com/Mateo-Wallace) - [Email](mailto:mateo.t.wallace@gmail.com) - [LinkedIn](https://www.linkedin.com/in/mateo-wallace-57931b254/)
 
-Connections                  ttl     opn     rt1     rt5     p50     p90
-                              0       0       0.00    0.00    0.00    0.00
-```
-
-Copy the forwarding address that starts with `https`, in this case `https://1234-someurl.ngrok.io`, then go to your [app's settings](https://discord.com/developers/applications).
-
-On the **General Information** tab, there will be an **Interactions Endpoint URL**. Paste your ngrok address there, and append `/interactions` to it (`https://1234-someurl.ngrok.io/interactions` in the example).
-
-Click **Save Changes**, and your app should be ready to run 🚀
-
-## Other resources
-- Read **[the documentation](https://discord.com/developers/docs/intro)** for in-depth information about API features.
-- Browse the `examples/` folder in this project for smaller, feature-specific code examples
-- Join the **[Discord Developers server](https://discord.gg/discord-developers)** to ask questions about the API, attend events hosted by the Discord API team, and interact with other devs.
-- Check out **[community resources](https://discord.com/developers/docs/topics/community-resources#community-resources)** for language-specific tools maintained by community members.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
