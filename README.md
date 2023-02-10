@@ -1,5 +1,7 @@
 # MP1-Discord-DumBot
 
+This bot has become outdated. See [Discord DumBot V2](https://github.com/Mateo-Wallace/MP2-Discord-DumBot-V2) for the full release.
+
 Discord DumBot is an extremely simple bot for discord. It works in multiple discord servers and is ready to be added to yours, and makes it so when a user types `/dumbot` the bot will respond with `Hello, I am DumBot. I am very dumb.`
 
 While building this bot I learned how to:
